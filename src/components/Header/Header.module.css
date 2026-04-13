@@ -1,0 +1,24 @@
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.5rem 2rem;
+  background-color: white;
+}
+
+
+.logo {
+  font-size:1.5rem;
+  font-weight:bold;
+}
+
+.nav a {
+  color:#ccc;
+  text-decoration :none;
+  margin-left:1.5re;
+  font-weight:500;
+  transition:color 0.3s;
+}
+
+.nav a.active { color:#f1c40f;}
+.nav a:hover {color:white;}
