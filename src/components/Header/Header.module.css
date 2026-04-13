@@ -12,13 +12,27 @@
   font-weight:bold;
 }
 
+
+.nav{
+  display:flex;
+  gap:1.5rem;
+  align-items:center;
+}
+
+
 .nav a {
-  color:#ccc;
+  color:#28112B;
   text-decoration :none;
   margin-left:1.5re;
   font-weight:500;
   transition:color 0.3s;
 }
 
-.nav a.active { color:#f1c40f;}
-.nav a:hover {color:white;}
+.nav a:hover {
+  color:white;
+}
+
+
+.nav a.active { 
+  color:#f1c40f;
+}
