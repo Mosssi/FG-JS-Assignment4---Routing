@@ -1,17 +1,11 @@
-.best {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-  min-height: calc(100vh - 160px);
-  text-align: center;
-}
-
-.pageTitle {
-  font-family: Georgia, serif;
-  color: #222;
-  margin-bottom: 30px;
-}
-
 .container {
+  /* 在顶部加一个分割线和内边距，让它和上面的“分类胶囊按钮”隔开 */
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #eaeaea; 
+}
+
+.grid {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -28,7 +22,7 @@
 }
 
 .movie:hover {
-  transform: scale(1.05); /* 悬停微微放大 */
+  transform: scale(1.05);
 }
 
 .img img {
@@ -41,14 +35,8 @@
   margin: 15px 0 5px 0;
   font-weight: bold;
   font-family: Georgia, serif;
-  /* 电影名字如果太长，自动省略号 */
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.vote {
-  margin: 0;
-  color: #e50914; /* 用一点红色点缀星星评分 */
-  font-weight: bold;
 }

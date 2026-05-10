@@ -1,0 +1,32 @@
+.about {
+  padding:40px 20px;
+  background:#f8f9fa;
+}
+
+
+.title,.subTitle {
+  font-family:geogia, serif;
+  color:#222;
+  margin-bottom:15px;
+}
+
+.text{
+  color:#555;
+  line-height:1.6;
+  margin:0;
+}
+
+/* 
+.container {
+  max-width:800px;
+  margin:0 auto;
+  text-align:center;
+} */
+
+.group1, .group2, .group3{
+  background:#fff;
+  padding:30px;
+  margin-bottom:24px;
+  border-radius:12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05)
+}

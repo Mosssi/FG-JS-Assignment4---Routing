@@ -1,43 +1,58 @@
 import { useState, useEffect } from 'react';
-import MovieCard from '../../components/MovieCard/MovieCard';
+import { NavLink } from 'react-router-dom';
 import styles from './Movies.module.css';
 
-export default function Movies() {
-  const [movies,setMovies ] = useState([]);
-  const [loading,setLoading] = useState(true);
-  const [error,setError] = useState(null);
+const Movies = () => {
+  const [best,setBest] = useState(null);
+
+  const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+  const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
+
+
+  const fetchBest = async () => {
+    try {
+      const response = await fetch(URL);
+      const bestData = await response.json();
+      const movies = bestData.results;
+
+      const theBestMovies =movies.filter(movie => movie.vote_average >= 8.5)
+      setBest(theBestMovies);
+
+    }catch(error){
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
-   fetch('https://api.tvmaze.com/shows')
-    .then(res => {
-      if(!res.ok){
-        throw new Error('API server is currently down (502 Bad gateway).')
-      }
-      return res.json()
-    })
-    .then(data => {
-      setMovies(data);
-      setLoading(false);
-    })
+  fetchBest();
+},[])
 
-    .catch(err => {
-      console.error("Fetch error:",err);
-      setError("Sorry,the movie databasse server is currently down. Please try again later.");
-      setLoading(false);
-    })
-  },[]);
-  if(error) return <p className={styles.loading}>❌ {error} </p>
+if(!best) return null;
 
-  if(loading)return <p className={styles.loading}>Loading amazing movies...🍿</p>
-
-  return(
-    <div>
-      <h1 className={styles.title}>Top Rated Movies</h1>
-      <div className={styles.grid}>
-        {movies.map(movie => (
-          <MovieCard key={movie.id} movie={movie} />
-        ))}
-      </div>
+return (
+  <div className={styles.best}>
+    <h2 className={styles.pageTitle}>Top Rated Masterpieces</h2>
+    <div className={styles.container}>
+      {best.map((movie) => (
+        <NavLink to={`/movies/${movie.id}`} key={movie.id} className={styles.movie}>
+    <div className={styles.img}>
+      <img
+      src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+      alt={movie.title}
+      />
     </div>
+    <p className={styles.title}>{movie.title}</p>
+    <p className={styles.vote}>🌟{movie.vote_average}</p>
+    </NavLink>
+  ))}
+    </div> 
+  </div>
   )
 }
+
+
+export default Movies;
+
+
+
+

@@ -1,0 +1,42 @@
+.category {
+  padding:40px 20px;
+  background-color:#f8f9fa;
+  min-height:calc(100vh - 160px);
+  text-align:center;
+}
+
+.pageTitle {
+  font-family:Georgia, serif;
+  color:#222;
+  margin-bottom:32px;
+}
+
+.container {
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:center;
+}
+
+.genre {
+  text-decoration:none;
+  background-color:#fff;
+  color:#333;
+  padding:12px 24px;
+  border:1px solid #eaeaea;
+  transition: all 0.2s ease;
+}
+
+.genre:hover {
+  background-color:#333;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+.name {
+  margin:0;
+  font-weight:bold;
+  font-family:Georgia, serif;
+}

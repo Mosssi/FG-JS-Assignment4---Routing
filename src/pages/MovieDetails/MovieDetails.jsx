@@ -23,8 +23,6 @@ export default function MovieDetails() {
 
   return(
     <div className={styles.detailsContainer}>
-      <button onClick ={() => navigate(-1)} className={styles.backBtn}>&larr; Go Back</button>
-
       <div className={styles.content}>
         <img src={movie.image?.original || movie.image?.medium} alt={movie.name} className={styles.poster} />
 
@@ -36,8 +34,12 @@ export default function MovieDetails() {
           <p className={styles.summary}>
              {movie.summary ? movie.summary.replace(/<[^>]*>?/gm, ''): 'No summary available.'}
           </p>
+
+          
         </div>
       </div>
+<button onClick ={() => navigate(-1)} className={styles.backBtn}>&larr; Go Back</button>
+
     </div>
   )
 }
