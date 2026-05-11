@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -15,14 +14,10 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        🎬 Popcorn Cinema
-      </div>
+      <Link to ="/" className={styles.logo} onClick={closeMenu}> 🎬 Popcorn Cinema</Link>
 
       <div className={styles.hamburger} onClick={toggleMenu}>
-        <span className={styles.bar}></span>
-        <span className={styles.bar}></span>
-        <span className={styles.bar}></span>
+        {isMenuOpen ? "🍿" : '🍔'}
       </div>
 
       <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>

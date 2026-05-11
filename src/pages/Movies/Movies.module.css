@@ -1,6 +1,7 @@
 .best {
-  padding: 40px 20px;
-  background-color: #f8f9fa;
+  padding: 12px 8px;
+  border-radius: 12px;
+  background-color: #ffffff;
   min-height: calc(100vh - 160px);
   text-align: center;
 }
@@ -28,7 +29,7 @@
 }
 
 .movie:hover {
-  transform: scale(1.05); /* 悬停微微放大 */
+  transform: scale(1.05); 
 }
 
 .img img {
@@ -41,7 +42,6 @@
   margin: 15px 0 5px 0;
   font-weight: bold;
   font-family: Georgia, serif;
-  /* 电影名字如果太长，自动省略号 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -49,6 +49,19 @@
 
 .vote {
   margin: 0;
-  color: #e50914; /* 用一点红色点缀星星评分 */
+  color: #e50914;
   font-weight: bold;
+}
+
+@media (max-width:768px){
+  .best{
+    padding-top:16px;
+    padding-bottom:22px;
+  }
+
+  .apgeTitle{
+    margin-top:0;
+    margin-bottom:24px;
+    font-size:1.5rem;
+  }
 }

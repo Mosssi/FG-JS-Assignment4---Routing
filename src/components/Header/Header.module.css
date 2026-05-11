@@ -2,20 +2,26 @@
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:1.5rem 2rem;
+  padding:16px 24px;
   background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  position:relative;
+  z-index:100;
 }
 
 
 .logo {
   font-size:1.5rem;
   font-weight:bold;
+  color:#333333;
+  text-decoration:none;
 }
 
 
 .nav{
   display:flex;
-  gap:1.5rem;
+  gap:24px;
   align-items:center;
 }
 
@@ -23,37 +29,49 @@
 .nav a {
   color:#28112B;
   text-decoration :none;
-  margin-left:1.5re;
+  margin-left:1.5rem;
   font-weight:500;
   transition:color 0.3s;
 }
 
 .nav a:hover {
-  color:white;
+  color:chartreuse;
+}
+.hamburger {
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:6px;
 }
 
-
-.nav a.active { 
-  color:#f1c40f;
-}
 
 @media (max-width:768px){
-  .header{
-    flex-direction:column;
-    padding:22px 12px;
-    gap:14px;
-    text-align:center;
+  .hamburger{
+    display:flex;
+    font-size:2rem;
   }
 
   .nav{
-    flex-wrap:warp;
-    justify-content:contnt;
-    gap:12px;
+    display:none;
+    flex-direction:column;
+    position:absolute;
+
+    top:100%;
+    left:0;
     width:100%;
+    background-color:aliceblue;
+    padding:16px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align:center;
+
   }
-  .navLink{
+  .nav.active{
+   display:flex;
+  }
+
+  .link{
+    display:block;
+    padding: 15px 0;
     width:100%;
-    padding:12px 0;
-    margin:0;
   }
 }
