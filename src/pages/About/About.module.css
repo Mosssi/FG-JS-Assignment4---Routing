@@ -30,3 +30,20 @@
   border-radius:12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.05)
 }
+
+
+@media (max-width:768px){
+  .container{
+    flex-direction:column;
+    gap:24px;
+    padding:22px 12px;
+    align-items:center;
+  }
+
+  .group1,.group2, .group3{
+  width:100%;
+  max-width:none;
+  margin:0 0 22px 0;
+  padding:32px 22px;
+  }
+}
